@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Apply Montserrat globally */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Ensure the parent container has relative positioning and overflow hidden */
+.ticker-container {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Adjusted animation speed and ensured vertical centering */
+.animate-marquee {
+  position: absolute;
+  display: inline-block;
+  animation: marquee 20s linear infinite; /* Slowed down animation to 20 seconds */
+  will-change: transform;
+  left: 0;
+  width: 100%;
+  top: 25%;
+  transform: translateY(-50%); /* Vertically centered */
+}
+
+@layer base{/* Apply BNCalifone to specific headings */
+  @font-face {
+    font-family: 'BNCalifone';
+    src: url('./assets/fonts/BNCalifone.woff2') format('woff2'),
+         url('./assets/fonts/BNCalifone.woff') format('woff');
+  }
+}
+
+
+/* Replace all yellow color definitions with #FFCA72 */
+
+/* Example */
+.some-class {
+  color: #FFCA72; /* Text color */
+}
+
+.another-class {
+  background-color: #FFCA72; /* Background color */
+}
+
+
