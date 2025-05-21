@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Apply Montserrat globally */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Hero Section */
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Ensure the parent container has relative positioning and overflow hidden */
+.ticker-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #ffca72;
+  overflow: hidden;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+/* Adjusted animation speed and ensured vertical centering */
+.animate-marquee {
+  position: absolute;
+  display: inline-block;
+  animation: marquee 20s linear infinite; /* Slowed down animation to 20 seconds */
+  will-change: transform;
+  left: 0;
+  width: 100%;
+  top: 25%;
+  transform: translateY(-50%); /* Vertically centered */
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+@layer base{/* Apply BNCalifone to specific headings */
+  @font-face {
+    font-family: 'BNCalifone';
+    src: url('./assets/fonts/BNCalifone.woff2') format('woff2'),
+         url('./assets/fonts/BNCalifone.woff') format('woff');
+  }
+}
+
+
+/* Replace all yellow color definitions with #FFCA72 */
+
+/* Example */
+.some-class {
+  color: #FFCA72; /* Text color */
+}
+
+.another-class {
+  background-color: #FFCA72; /* Background color */
+}
+
+/* Buttons */
+a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
